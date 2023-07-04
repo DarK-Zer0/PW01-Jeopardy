@@ -1,0 +1,59 @@
+MOVIES
+Q1: Which popular comic book character has had the most live-action portrayals?
+Q2: This director has 3 separate movies listed in the top-10 highest grossing movies?
+Q3: What actor tragically died on set while shooting a scene for 1990’s action movie 'The Crow'?
+Q4: Which film in the 'Friday the 13th' franchise did Jason get his iconic hockey mask?
+Q5: Who is the main antagonist of the children’s animated movie 'Coraline'?
+A1: Batman
+A2: James Cameron
+A3: Brendon Lee
+A4: Friday the 13th: Part III
+A5: The Beldam / The Other Mother
+
+COMPUTER SCIENCE
+Q1: What is the name of the most common operating system?
+Q2: What is the name of the process that converts human-readable code into machine-readable code?
+Q3: What are the keyboard shortcuts for copy and pasting?
+Q4: What is the name of the algorithm that sorts an array by repeatedly finding the minimum element and placing it at the beginning?
+Q5: What is the term for a computer program that can replicate itself and spread to other devices?
+A1: Microsoft Windows
+A2: Compilation / Compiling
+A3: Ctrl + C & Ctrl + V
+A4: Selection Sort
+A5: Virus
+
+SPORTS
+Q1: Who was named the Most Valuable Player (MVP) of the NBA Finals in 2021? 
+Q2: Which team won the NCAA Men's Basketball Championship in 2021?
+Q3: Which team won the UEFA Champions League in the 2020-2021 season?
+Q4: Who was the top scorer in the UEFA Euro 2020 tournament?
+Q5: Which team had the best regular season record in the 2020 NFL season?
+A1: Giannis Antetokounmpo (Milwaukee Bucks)
+A2: Baylor University Bears
+A3: Chelsea FC (England)
+A4: Cristiano Ronaldo (Portugal)
+A5: Green Bay Packers (13-3 record)
+
+HISTORY
+Q1: What was the first successful English colony in North America established by the Virginia Company of London?
+Q2: Who was the English polymath that invented the first mechanical computer?
+Q3: Which nineteenth century anarchist established the American Mail Letter Company?
+Q4: In the Battle of Adwa, what African country famously defeated Italy’s colonial forces?
+Q5: What 630-foot-tall stainless steel monument honors frontiersmen and pioneers? 
+A1: Jamestown
+A2: Charles Babbage
+A3: Lysander Spooner
+A4: Ethiopia
+A5: Gateway Arch 
+
+MUSIC
+Q1: What genre of music did Taylor Swift originally come from?
+Q2: Who was the first rap artist to win a Grammy award?
+Q3: Who is the lead singer of the American rock band Evanescence?
+Q4: What is the name of 50 Cent’s debut studio album?
+Q5: In which state of America was John Lennon of The Beatles assassinated?
+A1: Country
+A2: Eminem
+A3: Amy Lee
+A4: Get Rich or Die Tryin’
+A5: New York

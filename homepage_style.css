@@ -1,6 +1,7 @@
 body{
 	background-image: url("Jeopardy.jpg");
 	background-size: cover;
+	background-repeat: no-repeat;
 }
 .links{
 

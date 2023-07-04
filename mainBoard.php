@@ -93,6 +93,9 @@
 					if (!in_array($category . $value, $_SESSION['answered'])) {
 						// If no, display the image
 						echo "<img src=\"./img/".$value."Dollars.png\">";
+					} else {
+						// if yes, display blank image
+						echo "<img src=\"./img/answered.png\">";
 					}
 					echo "</a></td>";
 				}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Jeopardy</title>
+		<title>Jeoparody</title>
 		<meta charset="utf-8">
 		<style>
 			body {
@@ -11,6 +11,7 @@
 			table {
 				width: 100%;
 				border-collapse: collapse;
+				border-color: black;
 			}
 			
 			th {
@@ -41,7 +42,7 @@
 			}
 
 			td:hover {
-				background-color: yellow;
+				background-color: #feca5d;
 			}
 			
 			p {
@@ -49,11 +50,26 @@
 			}
 		</style>
 		<?php
-			// Get the team names from the superglobal variable $_GET
-			//$team1 = $_GET["team1"]; // Uncomment this code when $_GET is implemented
-			//$team2 = $_GET["team2"]; // Uncomment this code when $_GET is implemented
-			$team1 = "blue"; // Placeholder, remove when $_GET is implemented
-			$team2 = "red"; // Placeholder, remove when $_GET is implemented
+			session_start();
+
+			// Game Set Up
+			if (isset($_GET['team1']) && isset($_GET['team2'])) { // Sets up the game data
+				//$team1 = $_GET["team1"]; // Uncomment this code when $_GET is implemented
+				//$team2 = $_GET["team2"]; // Uncomment this code when $_GET is implemented
+				$team1 = "blue";
+				$team2 = "red";
+
+				$_SESSION['team1'] = $team1;
+				$_SESSION['team2'] = $team2;
+
+				// Initialize the scores and values of categories answered as empty arrays
+				$_SESSION['score1'] = 0;
+				$_SESSION['score2'] = 0;
+				$_SESSION['answered'] = array();
+			} else { // Grabs the on-going game data
+				$team1 = $_SESSION['team1'];
+				$team2 = $_SESSION['team2'];
+			}
 
 			// Define the categories and the money values as arrays
 			$categories = array("Movies", "Computer Science", "Sports", "History", "Music");
@@ -72,15 +88,24 @@
 				echo "<tr>";
 				foreach ($categories as $category) {
 					// Use the category and value as query parameters for the question page
-					echo "<td><a href='question.php?category=$category&value=$value'><img src=\"./img/".$value."Dollars.png\"></a></td>";
+					echo "<td><a href='question.php?category=$category&value=$value'>";
+					// Check if the category and value have been answered before
+					if (!in_array($category . $value, $_SESSION['answered'])) {
+						// If no, display the image
+						echo "<img src=\"./img/".$value."Dollars.png\">";
+					}
+					echo "</a></td>";
 				}
 				echo "</tr>";
 			}
 			echo "</table>";
 
+
 			// Display the team names and their scores
-			echo "<p>Team 1: $team1</p>";
-			echo "<p>Team 2: $team2</p>";
+			echo "<p>Team 1: $team1<br>
+			Score: $_SESSION['score1']</p>";
+			echo "<p>Team 2: $team2<br>
+			Score: $_SESSION['score2']</p>";
 		?>
 	</head>
 	<body>

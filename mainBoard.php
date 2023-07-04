@@ -102,10 +102,12 @@
 
 
 			// Display the team names and their scores
+			$score1 = $_SESSION['score1'];
+			$score2 = $_SESSION['score2']; 
 			echo "<p>Team 1: $team1<br>
-			Score: $_SESSION['score1']</p>";
+			Score: $score1</p>";
 			echo "<p>Team 2: $team2<br>
-			Score: $_SESSION['score2']</p>";
+			Score: $score2</p>";
 		?>
 	</head>
 	<body>

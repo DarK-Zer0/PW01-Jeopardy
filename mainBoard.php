@@ -56,8 +56,6 @@
 			if (isset($_GET['team1']) && isset($_GET['team2'])) { // Sets up the game data
 				//$team1 = $_GET["team1"]; // Uncomment this code when $_GET is implemented
 				//$team2 = $_GET["team2"]; // Uncomment this code when $_GET is implemented
-				$team1 = "blue";
-				$team2 = "red";
 
 				$_SESSION['team1'] = $team1;
 				$_SESSION['team2'] = $team2;
@@ -67,6 +65,15 @@
 				$_SESSION['score2'] = 0;
 				$_SESSION['answered'] = array();
 			} else { // Grabs the on-going game data
+				/* Delete the code toucing below when $_GET is implemented */
+				$team1 = "Blue";
+				$team2 = "Red";
+				$_SESSION['team1'] = $team1;
+				$_SESSION['team2'] = $team2;
+				$_SESSION['score1'] = 0;
+				$_SESSION['score2'] = 0;
+				$_SESSION['answered'] = array();
+
 				$team1 = $_SESSION['team1'];
 				$team2 = $_SESSION['team2'];
 			}

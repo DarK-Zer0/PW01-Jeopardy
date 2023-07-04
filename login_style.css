@@ -1,0 +1,18 @@
+body{
+	background-color: blue;
+}
+.login_header{
+	text-align: center;
+	margin-top: 10%;
+}
+.login_fields {
+	text-align: center;
+	margin-top: 0;
+	
+}
+.user{
+	margin-bottom: 15px;
+}
+.pass{
+	margin-bottom: 15px;
+}

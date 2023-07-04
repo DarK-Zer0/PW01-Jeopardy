@@ -1,0 +1,29 @@
+body{
+	background-color: blue;
+}
+.signup_header{
+	text-align: center;
+	margin-top: 10%;
+}
+input [type=text] {
+	margin: auto;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.signup_fields {
+	text-align: center;
+	margin-top: 0;
+	
+}
+
+.user{
+	margin-bottom: 15px;
+}
+.email{
+	margin-bottom: 15px;
+}
+
+.pass{
+	margin-bottom: 15px;
+}

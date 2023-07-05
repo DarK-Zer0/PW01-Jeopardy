@@ -38,49 +38,59 @@
 				$team1 = $_SESSION['team1'];
 				$team2 = $_SESSION['team2'];
 			}
+		?>
+	</head>
+	<body id="mainboard">
+		<?php
+			// Display the team names and their scores
+			$score1 = $_SESSION['score1'];
+			$score2 = $_SESSION['score2']; 
+			echo "<div class=\"scoreboard\">";
+			echo		"<table>";
+			echo			"<tr>";
+			echo				"<th>&nbsp;$team1's Team&nbsp;</th>";
+			echo				"<th>&nbsp;$team2's Team&nbsp;</th>";
+			echo			"</tr>";
+			echo			"<tr>";
+			echo				"<td>\$$score1</td>";
+			echo				"<td>\$$score2</td>";
+			echo			"</tr>";
+			echo 		"</table>";
+			echo "</div>";
 
 			// Define the categories and the money values as arrays
 			$categories = array("Movies", "Computer Science", "Sports", "History", "Music");
 			$money = array(200, 400, 600, 800, 1000);
 
 			// Create a table to display the board
-			echo "<table border='1'>";
+			echo "<div class=\"gameboard\">";
+		 	echo 	"<table>";
 			// Loop through the categories and display them as table headers
-			echo "<tr>";
+			echo 		"<tr>";
 			foreach ($categories as $category) {
-				echo "<th>$category</th>";
+				echo 		"<th>$category</th>";
 			}
-			echo "</tr>";
+			echo 		"</tr>";
 			// Loop through the money values and display them as table cells with links to the question page
 			foreach ($money as $value) {
-				echo "<tr>";
+				echo 	"<tr>";
 				foreach ($categories as $category) {
 					// Use the category and value as query parameters for the question page
-					echo "<td><a href='question.php?category=$category&value=$value'>";
+					echo 	"<td><a href='question.php?category=$category&value=$value'>";
 					// Check if the category and value have been answered before
 					if (!in_array($category . $value, $_SESSION['answered'])) {
 						// If no, display the image
-						echo "<img src=\"./img/".$value."Dollars.png\">";
+						echo 	"<img src=\"./img/".$value."Dollars.png\">";
 					} else {
 						// if yes, display blank image
-						echo "<img src=\"./img/answered.png\">";
+						echo 	"<img src=\"./img/answered.png\">";
 					}
-					echo "</a></td>";
+					echo 	"</a></td>";
 				}
-				echo "</tr>";
+				echo 	"</tr>";
 			}
-			echo "</table>";
-
-
-			// Display the team names and their scores
-			$score1 = $_SESSION['score1'];
-			$score2 = $_SESSION['score2']; 
-			echo "<p>Team 1: $team1<br>
-			Score: $score1</p>";
-			echo "<p>Team 2: $team2<br>
-			Score: $score2</p>";
+			echo 	"</table>";
+			echo "</div>";
 		?>
-	</head>
-	<body id="mainboard">
 	</body>
 </html>

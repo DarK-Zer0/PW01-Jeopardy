@@ -69,3 +69,41 @@ input [type=text] {
 	transform: translate(-50%, -50%);
 }
 
+#mainboard {
+    background-color: black;
+}
+#mainboard table {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: black;
+}
+#mainboard th {
+    background-color: blue;
+    color: white;
+    font-family: sans-serif;;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+    width: 20%;
+}
+#mainboard td {
+    background-color: black;
+    color: white;
+    font-family: Arial;
+    font-size: 36px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+#mainboard td img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+#mainboard td:hover {
+    background-color: #feca5d;
+}
+#mainboard p {
+    color: white;
+}

@@ -3,52 +3,7 @@
 	<head>
 		<title>Jeoparody</title>
 		<meta charset="utf-8">
-		<style>
-			body {
-				background-color: black;
-			}
-			
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				border-color: black;
-			}
-			
-			th {
-				background-color: blue;
-				color: white;
-				font-family: sans-serif;;
-				font-size: 24px;
-				text-align: center;
-				vertical-align: middle;
-				width: 20%;
-			}
-
-			td {
-				background-color: black;
-				color: white;
-				font-family: Arial;
-				font-size: 36px;
-				text-align: center;
-				vertical-align: middle;
-				padding: 5px;
-			}
-			
-			td img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block;
-			}
-
-			td:hover {
-				background-color: #feca5d;
-			}
-			
-			p {
-				color: white;
-			}
-		</style>
+		<link rel="stylesheet" href="styles.css">
 		<?php
 			session_start();
 
@@ -126,6 +81,6 @@
 			Score: $score2</p>";
 		?>
 	</head>
-	<body>
+	<body id="mainboard">
 	</body>
 </html>

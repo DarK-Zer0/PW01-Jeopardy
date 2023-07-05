@@ -90,25 +90,24 @@ input [type=text] {
 }
 .scoreboard table {
     text-align: center;
-    border: 2px solid #feca5d;
+    border: 2.5px solid #feca5d;
     border-collapse: collapse;
     margin: 0 auto;
 }
 .scoreboard td {
-    border-right: 1px solid #feca5d;
     font-size: 20px;
 }
 .scoreboard td:last-child {
     border-right: none;
 }
 .scoreboard th {
-    border-right: 1px solid #feca5d;
     font-size: 22px;
 }
 .scoreboard th:last-child {
     border-right: none;
 }
 .scoreboard td, th {
+    border-right: 2.5px solid #feca5d;
     padding: 0;
 }
 

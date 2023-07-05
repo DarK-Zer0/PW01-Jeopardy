@@ -1,0 +1,71 @@
+html {
+    min-height: 100%;
+}
+
+#homepage {
+    background-image: url("./img/Jeopardy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.links {
+    text-align:center;
+    margin-top: 20%;
+    border-style: solid;
+    border-width: thick;
+    border-radius: 10px;
+    margin-left: 40%;
+    margin-right:40%;
+    padding-top: 10px;
+    padding-bottom:20px;
+}
+.links a {
+    border-style: solid;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 15px;
+    color: white;
+    background-color: blue;
+}
+
+.login{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.login_header{
+	text-align: center;
+	margin-top: 10%;
+}
+.login_fields {
+	text-align: center;
+	margin-top: 0;
+}
+
+#account {
+    background-color: blue;
+}
+
+.user {
+	margin-bottom: 15px;
+}
+.pass {
+	margin-bottom: 15px;
+}
+
+.signup_header{
+	text-align: center;
+	margin-top: 10%;
+}
+.signup_fields {
+	text-align: center;
+	margin-top: 0;
+}
+
+input [type=text] {
+	margin: auto;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+

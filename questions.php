@@ -20,7 +20,7 @@
             $music = array();
 
             $category = $_GET['category']; // Grab the topic chosen
-            $value = $_GET['value']; // Grab the question listed under the money value chosen
+            $value = $_GET['value']; // Grab the quantity of money chosen
         ?>
     </head>
     <body>

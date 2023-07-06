@@ -146,7 +146,7 @@
 				} else {
 					echo "<p>Wow that was a close game! It's a tie!</p>";
 				}
-				echo "</div>"
+				echo "</div>";
 			}
 		?>
 	</body>

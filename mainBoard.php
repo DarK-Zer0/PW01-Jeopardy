@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="styles.css">
 		<?php
-			session_start();
+			session_start(); // Starts/Resumes the session
 
 			// Game Set Up
 			if (isset($_GET['team1']) && isset($_GET['team2'])) { // Sets up the game data
@@ -21,6 +21,7 @@
 				$_SESSION['score1'] = 0;
 				$_SESSION['score2'] = 0;
 				$_SESSION['answered'] = array();
+				$_SESSION['turn'] = 1;
 			} else { // Grabs the on-going game data
 				// Delete everything betweeen TEMP when $_GET is implemented
 				/* TEMP */
@@ -33,10 +34,20 @@
 				$_SESSION['score1'] = 0;
 				$_SESSION['score2'] = 0;
 				$_SESSION['answered'] = array();
+				$_SESSION['turn'] = 1;
 				/* TEMP */
 
 				$team1 = $_SESSION['team1'];
 				$team2 = $_SESSION['team2'];
+			}
+
+			if (isset($_GET['result'])) {
+				if ($_SESSION['turn'] == 1) {
+
+					$_SESSION['turn'] = 2;
+				} else {
+					$_SESSION['turn'] = 1;
+				}
 			}
 		?>
 	</head>
@@ -58,7 +69,8 @@
 			echo 		"</table>";
 			echo "</div>";
 
-			// Define the categories and the money values as arrays
+			// Define who's turn it is, the categories and the money values
+			$turn = $_SESSION['turn'];
 			$categories = array("Movies", "Computer Science", "Sports", "History", "Music");
 			$money = array(200, 400, 600, 800, 1000);
 

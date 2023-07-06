@@ -1,3 +1,9 @@
+
+/* 							
+				Temporary Code will be deleted when $_GET functionality is added from the homepage.
+				Add the following to the end of your URL to test $_GET functionality: 
+					?team1=Left&team2=Right
+*/
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,10 +14,7 @@
 			session_start(); // Starts/Resumes the session
 
 			// Game Set Up
-			if (isset($_GET['team1']) && isset($_GET['team2'])) { // Sets up the game data
-/* 				Add the following to your URL to test $_GET functionality:
-				?team1=Left&team2=Right
-*/
+			if (isset($_GET['team1']) && isset($_GET['team2'])) {
 				// Grab team names from user input
 				$team1 = $_GET["team1"];
 				$team2 = $_GET["team2"];
@@ -26,12 +29,12 @@
 				$_SESSION['answered'] = array();
 				$_SESSION['turn'] = 1;
 				$gameOver = false;
-				// Temporary Code will be deleted when $_GET functionality is added from the homepage
-				/* Temporary Code (Start) */
+
+				/* (---- Temporary Code */
 				$_SESSION['temp'] = true;
-				/* Temporary Code (End) */
+				/* Temporary Code ----) */
 			} else { // Grabs the on-going game data
-				/* Temporary Code (Start) */
+				/* (---- Temporary Code */
 				if (!$_SESSION['temp']) { // Prevents values from resetting when returning from questions.php
 					$team1 = "Blue";
 					$team2 = "Red";
@@ -47,13 +50,13 @@
 
 					$_SESSION['temp'] = true;
 				}
-				/* Temporary Code (End) */
+				/* Temporary Code ----) */
 
 				$team1 = $_SESSION['team1'];
 				$team2 = $_SESSION['team2'];
 			}
 
-			if (isset($_GET['result'])) {
+			if (isset($_GET['result'])) { // Adds the result to the score and changes who's turn it is
 				if ($_SESSION['turn'] == 1) {
 					$_SESSION['score1'] += $_GET['result'];
 					$_SESSION['turn'] = 2;
@@ -63,14 +66,14 @@
 				}
 			}
 
-			if (count($_SESSION['answered']) == 25) {
-				if ($_SESSION['score1'] > $_SESSION['score2']) {
+			if (count($_SESSION['answered']) == 25) { // When all questions have been attempted
+				if ($_SESSION['score1'] > $_SESSION['score2']) { // Team 1 has the most money
 					$tie = false;
 					$winner = $team1;
-				} else if ($_SESSION['score2'] > $_SESSION['score1']) {
+				} else if ($_SESSION['score2'] > $_SESSION['score1']) { // Team 2 has the most money
 					$tie = false;
 					$winner = $team2;
-				} else {
+				} else { // Team 1 & 2 have the same amount of money
 					$tie = true;
 				}
 			}
@@ -142,7 +145,7 @@
 			} else {
 				echo "<div class=\"victory\">";
 				if (!$tie) { // Checks if there was a tie.
-					echo "<p>Congratulations $winner Team wins!</p>";
+					echo "<p>Congratulations, $winner Team wins!</p>";
 				} else {
 					echo "<p>Wow that was a close game! It's a tie!</p>";
 				}

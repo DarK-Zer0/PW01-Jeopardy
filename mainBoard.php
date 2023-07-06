@@ -58,6 +58,10 @@
 					$_SESSION['turn'] = 1;
 				}
 			}
+
+			if (count($_SESSION['answered']) == 25) {
+				// Game Over Page
+			}
 		?>
 	</head>
 	<body id="mainboard">

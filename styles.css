@@ -83,6 +83,16 @@ input [type=text] {
     margin: 0;
 }
 
+.turn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: #feca5d;
+    font-size: 21px;
+    font-family: sans-serif;
+}
+
 .scoreboard {
     color: #feca5d;
     font-family: sans-serif;

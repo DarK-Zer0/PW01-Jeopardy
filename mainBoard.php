@@ -9,6 +9,9 @@
 
 			// Game Set Up
 			if (isset($_GET['team1']) && isset($_GET['team2'])) { // Sets up the game data
+/* 				Add the following to your URL to test $_GET functionality:
+				?team1=Left&team2=Right
+*/
 				// Grab team names from user input
 				$team1 = $_GET["team1"];
 				$team2 = $_GET["team2"];
@@ -22,19 +25,24 @@
 				$_SESSION['score2'] = 0;
 				$_SESSION['answered'] = array();
 				$_SESSION['turn'] = 1;
-			} else { // Grabs the on-going game data
-				// Delete everything betweeen TEMP when $_GET is implemented
+				// Delete everything betweeen /* TEMP */ when $_GET is implemented
 				/* TEMP */
-				$team1 = "Blue";
-				$team2 = "Red";
+				$_SESSION['temp'] = true;
+			} else { // Grabs the on-going game data
+				if (!$_SESSION['temp']) { // Prevents values from resetting when returning from questions.php
+					$team1 = "Blue";
+					$team2 = "Red";
 
-				$_SESSION['team1'] = $team1;
-				$_SESSION['team2'] = $team2;
+					$_SESSION['team1'] = $team1;
+					$_SESSION['team2'] = $team2;
 
-				$_SESSION['score1'] = 0;
-				$_SESSION['score2'] = 0;
-				$_SESSION['answered'] = array();
-				$_SESSION['turn'] = 1;
+					$_SESSION['score1'] = 0;
+					$_SESSION['score2'] = 0;
+					$_SESSION['answered'] = array();
+					$_SESSION['turn'] = 1;
+
+					$_SESSION['temp'] = true;
+				}
 				/* TEMP */
 
 				$team1 = $_SESSION['team1'];
@@ -43,9 +51,10 @@
 
 			if (isset($_GET['result'])) {
 				if ($_SESSION['turn'] == 1) {
-
+					$_SESSION['score1'] += $_GET['result'];
 					$_SESSION['turn'] = 2;
 				} else {
+					$_SESSION['score2'] += $_GET['result'];
 					$_SESSION['turn'] = 1;
 				}
 			}
@@ -53,6 +62,16 @@
 	</head>
 	<body id="mainboard">
 		<?php
+			if ($_SESSION['turn'] == 1) {
+				echo "<div class=\"turn\">";
+				echo 	"<p>It is $team1 Team's turn.</p>";
+				echo "</div>";
+			} else {
+				echo "<div class=\"turn\">";
+				echo 	"<p>It is $team2 Team's turn.</p>";
+				echo "</div>";
+			}
+
 			// Display the team names and their scores
 			$score1 = $_SESSION['score1'];
 			$score2 = $_SESSION['score2']; 

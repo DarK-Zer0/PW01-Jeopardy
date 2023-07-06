@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles.css">
 		<?php
             session_start(); // Resumes the session
+            $_SESSION['answered'][] = $category . $value; // Clears choice from the main board
 
             $movies = array(
                 "($200) Which popular comic book character has had the most live-action portrayals?",

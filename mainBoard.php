@@ -88,16 +88,16 @@
 				echo 	"<tr>";
 				foreach ($categories as $category) {
 					// Use the category and value as query parameters for the question page
-					echo 	"<td><a href='questions.php?category=$category&value=$value'>";
+					echo 	"<td>";
 					// Check if the category and value have been answered before
 					if (!in_array($category . $value, $_SESSION['answered'])) {
 						// If no, display the image
-						echo 	"<img src=\"./img/".$value."Dollars.png\">";
+						echo 	"<a href='questions.php?category=$category&value=$value'><img src=\"./img/".$value."Dollars.png\"></a>";
 					} else {
 						// if yes, display blank image
 						echo 	"<img src=\"./img/answered.png\">";
 					}
-					echo 	"</a></td>";
+					echo 	"</td>";
 				}
 				echo 	"</tr>";
 			}

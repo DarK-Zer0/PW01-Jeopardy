@@ -1,9 +1,9 @@
 
-/* 							
+<!-- 							
 				Temporary Code will be deleted when $_GET functionality is added from the homepage.
 				Add the following to the end of your URL to test $_GET functionality: 
 					?team1=Left&team2=Right
-*/
+-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>

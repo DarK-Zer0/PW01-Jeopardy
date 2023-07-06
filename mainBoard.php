@@ -25,10 +25,12 @@
 				$_SESSION['score2'] = 0;
 				$_SESSION['answered'] = array();
 				$_SESSION['turn'] = 1;
-				// Delete everything betweeen /* TEMP */ when $_GET is implemented
-				/* TEMP */
+				// Temporary Code will be deleted when $_GET functionality is added from the homepage
+				/* Temporary Code (Start) */
 				$_SESSION['temp'] = true;
+				/* Temporary Code (End) */
 			} else { // Grabs the on-going game data
+				/* Temporary Code (Start) */
 				if (!$_SESSION['temp']) { // Prevents values from resetting when returning from questions.php
 					$team1 = "Blue";
 					$team2 = "Red";
@@ -43,7 +45,7 @@
 
 					$_SESSION['temp'] = true;
 				}
-				/* TEMP */
+				/* Temporary Code (End) */
 
 				$team1 = $_SESSION['team1'];
 				$team2 = $_SESSION['team2'];

@@ -35,7 +35,12 @@
     margin-bottom: 10px;
 }
 
+
 /* login.html Styles */
+#account {
+    background-color: blue;
+}
+
 .login_header{
 	text-align: center;
 	margin-top: 10%;
@@ -43,10 +48,6 @@
 .login_fields {
 	text-align: center;
 	margin-top: 0;
-}
-
-#account {
-    background-color: blue;
 }
 
 .user {
@@ -158,4 +159,68 @@ input [type=text] {
     display: block;
     height: 100%;
     width: 100%;
+}
+
+/* questions.php Styles */
+#questions {
+    background-color: #1201ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+}
+#questions .qna {
+    color: white;
+    font-family: sans-serif;
+    font-size: 44px;
+    max-width: 35%;
+    text-align: center;
+}
+#questions .validation {
+    color: white;
+    font-family: sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+.reveal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 20vw;
+    height: 15vh;
+    background-color: black;
+    color: #feca5d;
+    border-radius: 50%;
+}
+.reveal a {
+    color: #feca5d;
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+.validation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.validation p {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.validation a {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 10px;
+}
+.validation a img {
+    width: 10vw;
+    height: 13.5vh;
 }

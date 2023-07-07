@@ -1,15 +1,15 @@
 
 <!-- 							
 				Temporary Code will be deleted when $_GET functionality is added from the homepage.
-				Add the following to the end of your URL to test $_GET functionality: 
-					?team1=Left&team2=Right
+				Add the following to the end of your URL to reset the session: 
+					?team1=Good&team2=Evil
 -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Jeoparody</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
 		<?php
 			session_start(); // Starts/Resumes the session
 
@@ -67,14 +67,19 @@
 			}
 
 			if (count($_SESSION['answered']) == 25) { // When all questions have been attempted
-				if ($_SESSION['score1'] > $_SESSION['score2']) { // Team 1 has the most money
+				$score1 = $_SESSION['score1'];
+				$score2 = $_SESSION['score2'];
+				if ($score1 > $score2) { // Team 1 has the most money
 					$tie = false;
+					$gameOver = true;
 					$winner = $team1;
-				} else if ($_SESSION['score2'] > $_SESSION['score1']) { // Team 2 has the most money
+				} else if ($score2 > $score1) { // Team 2 has the most money
 					$tie = false;
+					$gameOver = true;
 					$winner = $team2;
 				} else { // Team 1 & 2 have the same amount of money
 					$tie = true;
+					$gameOver = true;
 				}
 			}
 		?>
@@ -150,6 +155,7 @@
 					echo "<p>Wow that was a close game! It's a tie!</p>";
 				}
 				echo "</div>";
+				session_destroy();
 			}
 		?>
 	</body>

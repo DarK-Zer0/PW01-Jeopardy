@@ -1,0 +1,108 @@
+html{
+	min-height: 100%;
+}
+body{
+	background-color: blue;
+	margin-top: 60px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.center_header{
+	display: flex;
+	margin-left: 12%;
+	background-color: blue;
+	color: #FFFF00; 
+	
+	
+}
+.signup_header{
+	
+	box-sizing: border-box;
+	font-size: 30px;
+	font-weight: bold;
+
+}
+
+.main_class{
+	
+	margin-top: 0px;
+	box-sizing: border-box;
+	margin-left: 40%;
+	
+	
+}
+
+.signup_fields {
+	
+	display: flex;
+	max-width: fit-content;
+	margin-right: 0;
+	flex-direction: column;
+	color: #FFFF00; 
+	
+	
+	
+}
+.form{
+	
+	max-width: fit-content;
+	margin: 0;
+	background-color: blue;
+}
+
+input[type=text] {
+	border-radius: 10px;
+}
+
+input[type=password]{
+	border-radius:10px;
+}
+
+input[type=submit]{
+	cursor: pointer;
+	border-radius:10px;
+	
+}
+label {
+	display: inline-block;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+}
+
+
+.username{
+  display: inline-block;
+}
+.usr_n_span{
+	display: inline-block;
+
+	margin-left: 0;
+	margin-bottom: 10px;
+}
+.pass_n_span{
+	display: inline-block;
+	
+
+    margin-left:0;
+}
+.eml_n_span{
+	margin-left: 30px;
+	display:inline-block;
+	
+	margin-bottom: 5px;
+}
+
+.email{
+	display: inline-block;
+}
+
+
+.submit_align{
+	display: inline-block;
+	margin-left: 80px;
+	margin-bottom:10px;
+}
+.error{
+	display: block;
+	color: red;
+}

@@ -27,6 +27,7 @@
 				$_SESSION['score1'] = 0;
 				$_SESSION['score2'] = 0;
 				$_SESSION['answered'] = array();
+				$_SESSION['choices'] = 25;
 				$_SESSION['turn'] = 1;
 				$gameOver = false;
 
@@ -45,6 +46,7 @@
 					$_SESSION['score1'] = 0;
 					$_SESSION['score2'] = 0;
 					$_SESSION['answered'] = array();
+					$_SESSION['choices'] = 25;
 					$_SESSION['turn'] = 1;
 					$gameOver = false;
 
@@ -66,7 +68,7 @@
 				}
 			}
 
-			if (count($_SESSION['answered']) == 25) { // When all questions have been attempted
+			if ($_SESSION['choices'] == 0) { // When all questions have been attempted
 				$score1 = $_SESSION['score1'];
 				$score2 = $_SESSION['score2'];
 				if ($score1 > $score2) { // Team 1 has the most money

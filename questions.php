@@ -86,6 +86,7 @@
 			$index = ($value / 200) - 1; // Grabs the index of the question listed under the money value chosen
             $team = $_SESSION['team' . $_SESSION['turn']];
             $_SESSION['answered'][] = $category . $value; // Clears choice from the main board
+            $_SESSION['choices'] -= 1;
 		?>
     </head>
     <body id="questions">

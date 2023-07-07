@@ -1,0 +1,106 @@
+html{
+	min-height: 100%;
+}
+body{
+	background-color: blue;
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.center_header{
+	display: flex;
+	justify-content: center;
+	
+	
+	
+	
+}
+.team_header{
+	
+	box-sizing: border-box;
+	font-size: 30px;
+	font-weight: bold;
+    text-align: center;
+    color: #FFFF00; 
+
+}
+
+.main_class{
+	
+	max-width: fit-content;
+	
+	margin-top: 10px;
+	box-sizing: border-box;
+	
+	
+	
+}
+
+
+.group_fields {
+	
+	display: flex;
+	max-width: fit-content;
+	margin-right: 0;
+	flex-direction: column;
+	
+	
+	
+	
+}
+.form{
+	
+	max-width: fit-content;
+	margin: 0;
+	background-color: blue;
+}
+
+input[type=text] {
+	border-radius: 10px;
+    height: 35px;
+    width: 250px;
+}
+
+
+
+
+input[type=submit]{
+	cursor: pointer;
+	border-radius:10px;
+	background-color: red;
+    height: 35px;
+    width: 150px;
+}
+label {
+	display: inline-block;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+    color: #FFFF00; 
+}
+
+
+
+.g1name_n_span{
+	display: inline-block;
+
+	margin-left: 0;
+	margin-bottom: 10px;
+}
+
+.g2name_n_span{
+	display: inline-block;
+	
+
+    margin-left:0;
+}
+
+
+.submit_align{
+	display: inline-block;
+	margin-left: 80px;
+	margin-bottom:10px;
+}
+.error{
+	display: block;
+	color: red;
+}

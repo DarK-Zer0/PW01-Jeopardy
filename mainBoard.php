@@ -1,9 +1,4 @@
 
-<!-- 							
-				Temporary Code will be deleted when $_GET functionality is added from the homepage.
-				Add the following to the end of your URL to reset the session: 
-					?team1=Good&team2=Evil
--->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -35,16 +30,32 @@
 				$team2 = $_SESSION['team2'];
 			}
 
+			// (DEBUG) Game Restart, add '?restart=1' to URL to restart the game
+			if (isset($_GET['restart'])) {
+				$_SESSION['score1'] = 0;
+				$_SESSION['score2'] = 0;
+				$_SESSION['answered'] = array();
+				$_SESSION['choices'] = 25;
+				$_SESSION['turn'] = 1;
+				$_SESSION['gameOver'] = false;
+			}
+			// (DEBUG) Clear Choices, add '?clear=1' to URL to artificially clear all choices from the board
+			if (isset($_GET['clear'])) {
+				$_SESSION['choices'] = 0;
+			}
+
 			if (isset($_GET['result'])) { // Adds the result to the score and changes who's turn it is
 				if ($_SESSION['turn'] == 1) {
 					$_SESSION['score1'] += $_GET['result'];
 					$_SESSION['turn'] = 2;
+					$_SESSION['choices'] -= 1;
 				} else {
 					$_SESSION['score2'] += $_GET['result'];
 					$_SESSION['turn'] = 1;
+					$_SESSION['choices'] -= 1;
 				}
 			}
-
+			
 			if ($_SESSION['choices'] == 0) { // When all questions have been attempted
 				$score1 = $_SESSION['score1'];
 				$score2 = $_SESSION['score2'];
@@ -60,13 +71,14 @@
 					$tie = true;
 					$gameOver = true;
 				}
-			}
+				$_SESSION['gameOver'] = $gameOver; // Set the gameOver session variable
+			}			
 		?>
 	</head>
-	<body id="mainboard">
 		<?php
 			$endgame = $_SESSION['gameOver'];
 			if (!$endgame) {
+				echo "<body id=\"mainboard\">";
 				if ($_SESSION['turn'] == 1) {
 					echo "<div class=\"turn\">";
 					echo 	"<p>It is $team1 Team's turn.</p>";
@@ -114,7 +126,7 @@
 						// Use the category and value as query parameters for the question page
 						echo 	"<td>";
 						// Check if the category and value have been answered before
-						if (!in_array($category . $value, $_SESSION['answered'])) {
+						if (!in_array($category . $value, $_SESSION['answered']) && !isset($_GET['clear'])) {
 							// If no, display the image
 							echo 	"<a href='questions.php?category=$category&value=$value'><img src=\"./img/".$value."Dollars.png\"></a>";
 						} else {
@@ -128,13 +140,12 @@
 				echo 	"</table>";
 				echo "</div>";
 			} else {
-				echo "<div class=\"victory\">";
+				echo "<body id=\"victory\">";
 				if (!$tie) { // Checks if there was a tie.
 					echo "<p>Congratulations, $winner Team wins!</p>";
 				} else {
 					echo "<p>Wow that was a close game! It's a tie!</p>";
 				}
-				echo "</div>";
 				session_destroy();
 			}
 		?>

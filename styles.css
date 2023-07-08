@@ -8,6 +8,14 @@
     height: 100vh;
     margin: 0;
 }
+#victory {
+    background-color: #1201ff;
+    color: #feca5d;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
 
 .turn {
     position: absolute;
@@ -17,13 +25,6 @@
     color: #feca5d;
     font-size: 21px;
     font-family: sans-serif;
-}
-.victory {
-    color: #feca5d;
-    font-size: 32px;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
 }
 
 .scoreboard {

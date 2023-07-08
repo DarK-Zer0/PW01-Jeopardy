@@ -24,7 +24,7 @@
 			if (empty($_POST["username"])) {
                $usernameErr = "*Name is required"; 
 			
-            }elseif (!preg_match("/^[A-Za-z_][A-Za-z0-9_]*$/",$username)) {
+            }elseif (!preg_match("/^[A-Za-z_][A-Za-z0-9_]*$/",$_POST["username"])) {
 					$usernameErr = "*Only letters,numbers and underscore are allowed. Can not start with a number.";
 			
 			}else{
@@ -38,7 +38,7 @@
 			if (empty($_POST["email"])) {
 				$emailErr = "*Email is required";
 				
-			} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			}elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 				$emailErr = "*Invalid email format";
 				
 			}else{
@@ -51,7 +51,7 @@
 			if (empty($_POST["password"])) {
                $password = "*password is required";
 			  
-            }elseif (!preg_match("/^[A-Za-z_0-9$][A-Za-z0-9_#*$]*$/",$password)) {
+            }elseif (!preg_match("/^[A-Za-z_0-9$][A-Za-z0-9_#*$]*$/",$_POST["password"])) {
 					$passwordErr = "*Only letters,numbers and underscore are allowed.";
 					
 			} else{
@@ -65,7 +65,7 @@
 			
 			if (empty($usernameErr) && empty($emailErr) && empty($passwordErr)) {
 				// No errors, proceed with signup process
-				header("Location: login.php");
+				header("Location: group.php");
 				exit;
 			}
 			 

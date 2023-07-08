@@ -2,7 +2,7 @@ html{
 	min-height:100%;
 }
 body{
-	background-image: url("Jeopardy.jpg");
+	background-image: url("./img/Jeopardy.jpg");
 	background-size: cover;
 	background-repeat:no-repeat;
 	

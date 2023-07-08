@@ -4,45 +4,43 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Submit Form Twice</title>
+    <title>Jeoparody - Set Up</title>
     <link rel="stylesheet" href="group_style.css">
 </head>
 <body>
 <?php
-   
+  session_start();
+  
+  // Define variables to store group information
+  $group1Name = $group1Err = "";
+  $group2Name = $group2Err = "";
+  
+  // Check if form is submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["group1Name"])) {
+        $group1Err = "*name is required";
+    } elseif (!preg_match("/^[A-Za-z0-9_ ]+$/", $_POST["group1Name"])) {
+        $group1Err = "*Only letters,numbers and underscore are allowed.";
+    } else {
+        $group1Name = $_POST["group1Name"];
+        $_SESSION["group1Name"] = $group1Name;
+    }
 
-    // Define variables to store group information
-    $group1Name = $group1Err = "";
-    $group2Name = $group2Err = "";
-    
-    // Check if form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-           if(empty($_POST["group1Name"])){
-             $group1Err = "*name is required";
-           }elseif (preg_match("/^[A-Za-z0-9_ ]+$/",$group1Name)) {
-            $group1Err = "*Only letters,numbers and underscore are allowed.";
-           }else{
-                 $group1Name = $_POST["group1Name"];
-                 $_SESSION["group1Name"] = $group1Name;
-           }
+    if (empty($_POST["group2Name"])) {
+        $group2Err = "*name is required";
+    } elseif (!preg_match("/^[A-Za-z0-9_ ]+$/", $_POST["group2Name"])) {
+        $group2Err = "*Only letters,numbers and underscore are allowed.";
+    } else {
+        $group2Name = $_POST["group2Name"];
+        $_SESSION["group2Name"] = $group2Name;
+    }
 
-
-           if(empty($_POST["group2Name"])){
-            $group2Err = "*name is required";
-          }elseif (preg_match("/^[A-Za-z0-9_ ]+$/",$group2Name)) {
-           $group2Err = "*Only letters,numbers and underscore are allowed.";
-          }else{
-                $group2Name = $_POST["group2Name"];
-                $_SESSION["group2Name"] = $group2Name;
-          }
-         
-          if (empty($group1Err) && empty($group2Err) ) {
-            // No errors, proceed with signup process
-            header("Location: mainBoard.php");
-            exit;
-        }
-
-     }
+    if (empty($group1Err) && empty($group2Err)) {
+        // No errors, proceed with signup process
+        header("Location: mainBoard.php?start=1");
+        exit;
+    }
+  }  
 ?>
   <div class= "main_class" >
     

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Title Here</title>
+    <title>Jeoparody - Login</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="login_style.css">
     <!-- Additional meta tags, CSS links, or JavaScript links can be added here -->
@@ -16,11 +16,13 @@
 	   $password= $passwordErr= "";
        $usr_n_passErr = "";
 
-       $hc_usr1 = "group_one";
-		$hc_usr2 = "group_two";
-		
-		$hc_pass1 = "pass1";
-		$hc_pass2 = "pass2";
+       // Pre-made accounts
+       $hc_users = array(
+          "Indra"=>"zer0",
+          "Marcus"=>"pass2",
+          "Nathnael"=>"pass3",
+          "Zian"=>"pass4"
+       );
 	
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
@@ -46,7 +48,7 @@
 				$passwordErr = "*wrong password pattern.";
 			}
 
-            if (($username === $hc_usr1 && $password === $hc_pass1) || ($username === $hc_usr2 && $password === $hc_pass2)) {
+            if (isset($hc_users[$username]) && $hc_users[$username] === $password) {
                 header("Location: group.php");
                 exit;
            } else {

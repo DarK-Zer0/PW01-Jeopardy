@@ -13,8 +13,9 @@ function validateForm() {
     $usernameNew = $_SESSION['username'];
     $passwordNew = $_SESSION['password'];
 	
+	/* Pre-made Accounts */
 	$usernames = array("indra","marcus","nathnael","zian");
-	$passwords = array("pass1","pass2","pass3","pass4");
+	$passwords = array("zer0","pass2","pass3","pass4");
 
 	array_push($usernames,$usernameNew);
 	array_push($passwords,$passwordNew);

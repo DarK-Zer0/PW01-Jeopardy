@@ -24,7 +24,7 @@
 			if (empty($_POST["username"])) {
                $usernameErr = "*Name is required"; 
 			
-            }elseif (!preg_match("/^[A-Za-z_]\w*$/",$username)) {
+            }elseif (!preg_match("/^[A-Za-z_][A-Za-z0-9_]*$/",$username)) {
 					$usernameErr = "*Only letters,numbers and underscore are allowed. Can not start with a number.";
 			
 			}else{

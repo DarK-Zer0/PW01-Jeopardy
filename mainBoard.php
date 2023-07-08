@@ -39,7 +39,7 @@
 				$_SESSION['turn'] = 1;
 				$_SESSION['gameOver'] = false;
 			}
-			// (DEBUG) Clear Choices, add '?clear=1' to URL to artificially clear all choices from the board
+			// (DEBUG) Clear Choices, add '?clear=1' to URL to clear all choices from the board, ending the game
 			if (isset($_GET['clear'])) {
 				$_SESSION['choices'] = 0;
 			}

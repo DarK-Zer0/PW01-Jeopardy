@@ -2,7 +2,7 @@ html{
 	min-height: 100%;
 }
 body{
-	background-color: blue;
+	background-color: black;
 	margin-top: 20px;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -52,7 +52,7 @@ body{
 	
 	max-width: fit-content;
 	margin: 0;
-	background-color: blue;
+	
 }
 
 input[type=text] {
@@ -67,9 +67,11 @@ input[type=text] {
 input[type=submit]{
 	cursor: pointer;
 	border-radius:10px;
-	background-color: red;
+	background-color:blueviolet;
+	
     height: 35px;
     width: 150px;
+	font-size: 110%;
 }
 label {
 	display: inline-block;

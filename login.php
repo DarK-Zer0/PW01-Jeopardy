@@ -27,27 +27,24 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			
-			if (empty($_POST["username"])) {
-               $usernameErr = "Name is required";
-			   
-            } else {
-				$username = $_POST["username"];
-             }
-
-              if (!preg_match("/^[A-Za-z_]\w*$/",$username)) {
+		if (empty($_POST["username"])) {
+               $usernameErr = "Name is required";	   
+                } 
+		
+		if (!preg_match("/^[A-Za-z_]\w*$/",$_POST['username'])) {
                 $usernameErr = "*Only letters,numbers and underscore are allowed. Can not start with a number.";
-              } 
-			 
+                } else {
+               $username = $_POST["username"];
+               } 
 			if (empty($_POST["password"])) {
                $password = "password is required";
-            } else {
+            } 
+
+             if (!preg_match("/^[A-Za-z_0-9$][A-Za-z0-9_#*$]*$/",$_POST['password'])) {
+				$passwordErr = "*wrong password pattern.";
+	     } else {
 				$password = $_POST["password"];
              }
-
-             if (!preg_match("/^[A-Za-z_0-9$][A-Za-z0-9_#*$]*$/",$password)) {
-				$passwordErr = "*wrong password pattern.";
-			}
-
             if (isset($hc_users[$username]) && $hc_users[$username] === $password) {
                 header("Location: group.php");
                 exit;

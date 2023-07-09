@@ -1,6 +1,6 @@
 /* mainBoard.php Styles */
 #mainboard {
-    background-color: black;
+    background-color: #1201ff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +15,24 @@
     font-weight: bold;
     font-family: sans-serif;
     text-align: center;
+}
+#victory .choices {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    align-items: center;
+}
+#victory .choices a {
+    display:inline-block;
+    margin: 1vh 1vw;
+    border-radius: 50%;
+    color: #1201ff;
+    background-color: #feca5d;
+    font-family: sans-serif;
+    font-size: 40px;
+    padding: 20px;
 }
 
 .turn {
@@ -58,6 +76,7 @@
 .gameboard {
     height: 92vh;
     width: 100%;
+    background-color: black;
 }
 .gameboard table {
     border-collapse: collapse;
@@ -110,26 +129,6 @@
     font-size: 35px;
     text-align: center;
 }
-.reveal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    width: 20vw;
-    height: 15vh;
-    background-color: black;
-    color: #feca5d;
-    border-radius: 50%;
-}
-.reveal a {
-    color: #feca5d;
-    font-family: sans-serif;
-    font-size: 40px;
-}
-
 .validation {
     position: absolute;
     bottom: 20px;
@@ -149,4 +148,24 @@
 .validation a img {
     width: 10vw;
     height: 13.5vh;
+}
+
+.reveal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 20vw;
+    height: 15vh;
+    background-color: darkblue;
+    color: #feca5d;
+    border-radius: 50%;
+}
+.reveal a {
+    color: #feca5d;
+    font-family: sans-serif;
+    font-size: 40px;
 }

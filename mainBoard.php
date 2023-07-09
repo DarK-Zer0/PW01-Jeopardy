@@ -6,7 +6,13 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<?php
-			session_start(); // Starts/Resumes the session
+			session_start();
+			// Return to Home
+			if(isset($_GET['returnHome'])) {
+				$_SESSION = array();
+				header('Location: homepage.html');
+				exit;
+			}
 
 			// Game Set Up
 			if (isset($_GET['start'])) {
@@ -146,7 +152,10 @@
 				} else {
 					echo "<p>Wow that was a close game! It's a tie!</p>";
 				}
-				session_destroy();
+				echo "<div class=\"choices\">";
+				echo 	"<a href=mainBoard.php?start=1> Play Again </a>";
+				echo 	"<a href=mainBoard.php?returnHome=1> Return to Home </a>";
+				echo "</div>";
 			}
 		?>
 	</body>

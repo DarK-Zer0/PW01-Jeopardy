@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jeoparody - Login</title>
+    <title>Login</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="login_style.css">
     <!-- Additional meta tags, CSS links, or JavaScript links can be added here -->
@@ -16,36 +16,36 @@
 	   $password= $passwordErr= "";
        $usr_n_passErr = "";
 
-       // Pre-made accounts
-       $hc_users = array(
-          "Indra"=>"zer0",
-          "Marcus"=>"pass2",
-          "Nathnael"=>"pass3",
-          "Zian"=>"pass4"
-       );
+       $hc_usr1 = "group_one";
+		$hc_usr2 = "group_two";
+		
+		$hc_pass1 = "pass1";
+		$hc_pass2 = "pass2";
 	
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			
-		if (empty($_POST["username"])) {
-               $usernameErr = "Name is required";	   
-                } 
-		
-		if (!preg_match("/^[A-Za-z_]\w*$/",$_POST['username'])) {
+			if (empty($_POST["username"])) {
+               $usernameErr = "Name is required";
+			   
+            } 
+              if (!preg_match("/^[A-Za-z_]\w*$/",$_POST['username'])) {
                 $usernameErr = "*Only letters,numbers and underscore are allowed. Can not start with a number.";
-                } else {
+              } else {
                $username = $_POST["username"];
-               } 
+               }
+			 
 			if (empty($_POST["password"])) {
                $password = "password is required";
             } 
 
              if (!preg_match("/^[A-Za-z_0-9$][A-Za-z0-9_#*$]*$/",$_POST['password'])) {
 				$passwordErr = "*wrong password pattern.";
-	     } else {
+			}else {
 				$password = $_POST["password"];
              }
-            if (isset($hc_users[$username]) && $hc_users[$username] === $password) {
+
+            if (($username === $hc_usr1 && $password === $hc_pass1) || ($username === $hc_usr2 && $password === $hc_pass2)) {
                 header("Location: group.php");
                 exit;
            } else {
@@ -54,22 +54,24 @@
 		}	 
 	 
 	 ?>
+      <div class="pic_header"> <img src="jlogo.jpg"> </img>  </div>
       <h1 class= "login_header"> Login </h1>
 	 <form  method="post" action= " <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ">
 	 <div class="login_fields">
   
      <div class="usr_n_span">
     
-       <label class="label" for="u_name">username    </label> 
+       <label class="label" for="u_name"> Username 
      <input class="input" type="text" id="u_name" name="username" required> 
-      
+     </label> 
 	  <span class= "error">  <?php echo $usernameErr; ?> </span> <br>
     </div>
     
      <div class="pass_n_span">
     
-	<label class="label" for="pass"> password </label>
-     <input class="input" type="password" id="pass" name="password"  required > 
+	<label class="label" for="pass"> Password 
+     <input class="input" type="password" id="pass" name="password"  required >
+     </label> 
 	 <span class= "error">  <?php echo $passwordErr; ?> </span> <br>
     </div>
 

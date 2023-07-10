@@ -9,22 +9,22 @@ session_start();
 </head>
 <body>
 <?php
-   
-
-    // Define variables to store group information
-    $group1Name = $group1Err = "";
-    $group2Name = $group2Err = "";
-    
-    // Check if form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-           if(empty($_POST["group1Name"])){
-             $group1Err = "*name is required";
-           }elseif (!preg_match("/^[A-Za-z0-9_ ]+$/",$_POST["group1Name"])) {
-            $group1Err = "*Only letters,numbers and underscore are allowed.";
-           }else{
-                 $group1Name = $_POST["group1Name"];
-                 $_SESSION["group1Name"] = $group1Name;
-           }
+    session_start();
+  
+  // Define variables to store group information
+  $group1Name = $group1Err = "";
+  $group2Name = $group2Err = "";
+  
+  // Check if form is submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["group1Name"])) {
+        $group1Err = "*name is required";
+    } elseif (!preg_match("/^[A-Za-z0-9_ ]+$/", $_POST["group1Name"])) {
+        $group1Err = "*Only letters,numbers and underscore are allowed.";
+    } else {
+        $group1Name = $_POST["group1Name"];
+        $_SESSION["group1Name"] = $group1Name;
+    }
 
 
            if(empty($_POST["group2Name"])){
@@ -38,7 +38,7 @@ session_start();
          
           if (empty($group1Err) && empty($group2Err) ) {
             // No errors, proceed with signup process
-            header("Location: mainBoard.php");
+            header("Location: mainBoard.php?start=1");
             exit;
         }
 

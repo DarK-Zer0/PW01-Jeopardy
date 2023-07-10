@@ -62,7 +62,7 @@
 			
 			if (empty($usernameErr) && empty($emailErr) && empty($passwordErr)) {
 				// No errors, proceed with signup process
-				header("Location: login.php");
+				header("Location: group.php");
 				exit;
 			}
 			 

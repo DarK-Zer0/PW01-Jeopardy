@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Login - Jeopardy</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="login_style.css">
     <!-- Additional meta tags, CSS links, or JavaScript links can be added here -->

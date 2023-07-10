@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup</title>
+    <title>Signup - Jeopardy</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="signup_styles.css">
     <!-- Additional meta tags, CSS links, or JavaScript links can be added here -->

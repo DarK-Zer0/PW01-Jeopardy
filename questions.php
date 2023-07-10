@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<title>Jeoparody - Q&A</title>
+		<title>Q&A - Jeopardy</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<?php

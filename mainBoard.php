@@ -84,6 +84,7 @@
 		<?php
 			$endgame = $_SESSION['gameOver'];
 			if (!$endgame) {
+				// Displays who's turn it is
 				echo "<body id=\"mainboard\">";
 				if ($_SESSION['turn'] == 1) {
 					echo "<div class=\"turn\">";
@@ -133,7 +134,7 @@
 						echo 	"<td>";
 						// Check if the category and value have been answered before
 						if (!in_array($category . $value, $_SESSION['answered']) && !isset($_GET['clear'])) {
-							// If no, display the image
+							// If no, display the money image
 							echo 	"<a href='questions.php?category=$category&value=$value'><img src=\"./img/".$value."Dollars.png\"></a>";
 						} else {
 							// if yes, display blank image
@@ -152,6 +153,7 @@
 				} else {
 					echo "<p>Wow that was a close game! It's a tie!</p>";
 				}
+				// End of Game Choices
 				echo "<div class=\"choices\">";
 				echo 	"<a href=mainBoard.php?start=1> Play Again </a>";
 				echo 	"<a href=mainBoard.php?returnHome=1> Return to Home </a>";

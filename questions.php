@@ -84,7 +84,7 @@
             $category = $_GET['category']; // Grabs the topic chosen
             $value = $_GET['value']; // Grabs the money value chosen
 			$index = ($value / 200) - 1; // Grabs the index of the question listed under the money value chosen
-            $team = $_SESSION['team' . $_SESSION['turn']];
+            $team = $_SESSION['team' . $_SESSION['turn']]; // Grabs the team who's turn it is (team1 = left team, team2 = right team)
             $_SESSION['answered'][] = $category . $value; // Clears choice from the main board
 		?>
     </head>
@@ -121,6 +121,7 @@
                 $answer = $_SESSION['ans'];
                 $value = $_SESSION['value'];
 
+                // Prompts user to verify if answer was correct
                 echo "<p class=\"qna\">$answer</p>";
                 echo "<div class=\"validation\">";
                 echo    "<p>Did $team's Team get it right?</p>";

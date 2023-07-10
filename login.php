@@ -56,7 +56,7 @@
 		}	 
 	 
 	 ?>
-      <div class="pic_header"> <img src="jlogo.jpg"> </img>  </div>
+      <div class="pic_header"> <img src="./img/jlogo.jpg"> </img>  </div>
       <h1 class= "login_header"> Login </h1>
 	 <form  method="post" action= " <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ">
 	 <div class="login_fields">

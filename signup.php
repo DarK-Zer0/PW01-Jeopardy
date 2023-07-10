@@ -69,7 +69,7 @@
 			
         }
 	?>
-	 <div class="pic_header"> <img src="jlogo.jpg"> </img>  </div>
+	 <div class="pic_header"> <img src="./img/jlogo.jpg"> </img>  </div>
 	 <div class="main_class"> 
      <div class="center_header">
 	 <div class="signup_header"> 
